@@ -1,9 +1,9 @@
 package com.thoughtworks.models
 
 case class Rover(
-    private var position: Position,
-    private var orientation: Orientation,
-    mission: Mission) {
+    private var position: Position = Position(0, 0),
+    private var orientation: Orientation = East,
+    mission: Mission = Mission(Nil)) {
   
   var died = false
   
@@ -14,5 +14,6 @@ case class Rover(
   def currentPosition = position
   def currentOrientation = orientation
   
-  override def toString = s"{${currentPosition}, ${currentOrientation}, ${mission}}" 
+  override def toString =
+    s"{${currentPosition}, ${currentOrientation}, ${mission}}" 
 }

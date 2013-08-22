@@ -1,7 +1,5 @@
 package com.thoughtworks.models
 
-import java.lang.Error
-
 abstract class Orientation(o: Char) {
   def left: Orientation
   def right: Orientation

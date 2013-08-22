@@ -4,8 +4,8 @@ case class Plateau(w: Int, h: Int) {
   type Move = (Position, Orientation, Command)
  
   private var threateningMoves: List[Move] = Nil
-  private def outOfHorizontalBounds(x: Int) = !(x > 0 && x <= w)
-  private def outOfVerticalBounds(y: Int) = !(y > 0 && y <= h)
+  private def outOfHorizontalBounds(x: Int) = x < 0 || x > w
+  private def outOfVerticalBounds(y: Int) = y < 0 || y > h
   
   def doNotHave(p: Position) =
     outOfHorizontalBounds(p.x) || outOfVerticalBounds(p.y)
